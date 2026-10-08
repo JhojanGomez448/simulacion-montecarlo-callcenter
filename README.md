@@ -16,13 +16,13 @@ Simulación de eventos discretos calibrada con 248 373 llamadas reales.
 
 ---
 
-## 📌 Resumen
+## Resumen
 
 El Call Center analizado tiene una **tasa de abandono real del 10.93 %** y un tiempo de espera promedio de **3.87 min**. Este proyecto construye un modelo Monte Carlo (llegadas exponenciales, atención normal truncada, paciencia exponencial, cola FIFO con *c* agentes) para encontrar la dotación que cumple el SLA sin sobredimensionar.
 
 > **Conclusión:** con **5 agentes** el nivel de servicio es **99.8 %** con menos de 1 abandono por jornada, y se mantiene en **99.4 %** ante un aumento de demanda del 30 %.
 
-## 🗂️ Contenido
+## Contenido
 
 | Archivo / carpeta | Descripción |
 |---|---|
@@ -33,7 +33,7 @@ El Call Center analizado tiene una **tasa de abandono real del 10.93 %** y un ti
 | [`evidencias_VV/`](evidencias_VV) | Trazabilidad, pruebas de extremos, validación y sensibilidad |
 | [`img/`](img) | Figuras usadas en este README |
 
-## ⚙️ Modelo
+## Modelo
 
 ```
 Llegadas (Exp, λ) ──► Cola FIFO ──► c agentes en paralelo ──► Llamada atendida
@@ -53,7 +53,7 @@ Llegadas (Exp, λ) ──► Cola FIFO ──► c agentes en paralelo ──►
 
 ![Distribución del tiempo de atención](img/distribucion_servicio.png)
 
-## 📊 Resultados
+## Resultados
 
 ### Escenario base (500 réplicas por configuración)
 
@@ -83,7 +83,7 @@ Los escenarios se implementan como factores multiplicativos sobre λ y μ.
 
 > Los valores provienen del informe (`informe/`). Al re-ejecutar los notebooks pueden variar levemente por la aleatoriedad de la simulación.
 
-## ✅ Verificación y validación
+## Verificación y validación
 
 | Prueba | Resultado |
 |---|---|
@@ -100,7 +100,7 @@ Evidencias completas en [`evidencias_VV/`](evidencias_VV): [trazabilidad](eviden
 
 Aumentar λ o μ reduce el nivel de servicio. Reducir la paciencia un 50 % lo **aumenta** (94.6 % → 96.4 %): los clientes impacientes abandonan y sus esperas no se contabilizan, de modo que las llamadas efectivamente atendidas esperan menos. Es un efecto de cómo se define el KPI, no un error del código.
 
-## 🚀 Cómo ejecutarlo
+## Cómo ejecutarlo
 
 ```bash
 git clone https://github.com/JhojanGomez448/simulacion-montecarlo-callcenter.git
@@ -114,13 +114,13 @@ jupyter notebook
 
 Ambos notebooks esperan `Call_Center_Data.csv` en la misma carpeta. Semilla `42` y `500` réplicas por configuración.
 
-## 🔭 Limitaciones y trabajo futuro
+## Limitaciones y trabajo futuro
 
 - Modelar la demanda por franjas horarias con un proceso de Poisson no homogéneo.
 - Incorporar enrutamiento por habilidades y agentes heterogéneos.
 - Optimizar la dotación minimizando el costo total (nómina + costo de abandono).
 
-## 👤 Autor
+## Autor
 
 **Jhojan Raul Zambrano Gomez** · Modelado y Simulación
 Fundación Universitaria Compensar · Docente: Alexander Reyes Moreno · Bogotá, Colombia, mayo de 2026

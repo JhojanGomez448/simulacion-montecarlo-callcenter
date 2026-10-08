@@ -1,0 +1,11 @@
+VALIDACIÓN — Comparación con datos reales
+==================================================
+Tasa abandono REAL (dataset)      : 10.93%
+Tasa abandono MODELO (c=2 agentes): 9.16%
+Diferencia absoluta               : 1.77pp
+
+Interpretación:
+  El modelo con 2 agentes reproduce la tasa de abandono histórica
+  dentro de márgenes razonables, sugiriendo que el sistema real
+  operó frecuentemente con capacidad limitada (2-3 agentes).
+  Validación por datos reales: ✓ ACEPTABLE (diff < 5pp)

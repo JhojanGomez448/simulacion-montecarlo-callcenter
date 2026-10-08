@@ -1,0 +1,24 @@
+PRUEBAS DE EXTREMOS — Verificación V&V
+Semilla: 42 | Réplicas por prueba: 500
+=======================================================
+
+VV-01 — c = 0 agentes (esperado: 0 atendidas, 100% abandono)
+  Llamadas atendidas (media)  : 0.00
+  Llamadas abandonadas (media): 199.36
+  Nivel servicio (media)      : 0.00%
+  Resultado: ✓ APROBADO
+
+VV-02 — c = 1000 agentes (esperado: 0 abandonos, SL = 100%)
+  Llamadas atendidas (media)  : 198.12
+  Llamadas abandonadas (media): 0.00
+  Nivel servicio (media)      : 100.00%
+  Resultado: ✓ APROBADO
+
+VV-03 — Monotonicidad: más agentes → menos abandonos
+  c=   2: abandonos promedio = 17.91
+  c=   3: abandonos promedio = 4.16
+  c=   5: abandonos promedio = 0.12
+  c=  10: abandonos promedio = 0.00
+  Resultado: ✓ APROBADO
+
+RESUMEN: TODAS LAS PRUEBAS APROBADAS ✓
